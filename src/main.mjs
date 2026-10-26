@@ -81,7 +81,7 @@ function updateStats(){
   $("comDrift").textContent=metric(m.centerDrift);
   $("residual").textContent=metric(m.residual);
   $("work").textContent=metric(m.work);
-  $("stored").textContent=metric(m.total);
+  $("stored").textContent=metric(m.stored);
   $("loss").textContent=metric(m.loss);
   $("time").textContent="T + "+state.time.toFixed(2)+" S";
   const passes=Math.abs(m.momentumError)<1e-9&&Math.abs(m.centerDrift)<1e-9&&Math.abs(m.residual)<0.01;
