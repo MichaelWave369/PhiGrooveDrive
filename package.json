@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Liquid-inspired relational actuation LIQ-E0 numerical testbed",
+  "description": "PhiGrooveDrive LIQ-E0 and LIQ-E1 computational research labs",
   "scripts": {
     "test": "node --test",
-    "validate": "node --check src/physics.mjs && node --check src/main.mjs && node --test"
+    "validate": "node --check src/physics.mjs && node --check src/main.mjs && node --check src/e1-physics.mjs && node --check src/e1-main.mjs && node --test",
+    "test:e1": "node --test tests/e1-physics.test.mjs"
   }
 }
