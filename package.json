@@ -1,0 +1,11 @@
+{
+  "name": "phigroovedrive",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Liquid-inspired relational actuation LIQ-E0 numerical testbed",
+  "scripts": {
+    "test": "node --test",
+    "validate": "node --check src/physics.mjs && node --check src/main.mjs && node --test"
+  }
+}
