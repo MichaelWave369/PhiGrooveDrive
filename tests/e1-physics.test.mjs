@@ -9,7 +9,9 @@ test("the new fin is six fixed-x nodes with spatially phased travel",()=>{
   const nodes=instant(p,.065).nodes;
   assert.equal(nodes.length,6);
   nodes.forEach((n,i)=>nearly(n.x,p.length*i/5));
-  assert.ok(Math.abs(nodes[0].y-nodes[1].y)>.02);
+  // Check programmed spatial phase instead of an arbitrary adjacent-node distance.
+  assert.ok(Math.abs(nodes[1].phase-nodes[0].phase)>.5);
+  assert.ok(Math.abs(nodes[0].y-nodes[2].y)>.02);
   assert.equal(p.segments,6);
 });
 test("all modes obey exact fin/fluid action-reaction balance",()=>{
