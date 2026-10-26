@@ -8,6 +8,12 @@
 
 **[Launch browser lab (after Pages is enabled and deployed)](https://michaelwave369.github.io/PhiGrooveDrive/)**
 
+## LIQ-E1c · Magnetic gap / reversible-bus laboratory (SIMULATED)
+
+[Open the Magnetic Loop lab after merge and Pages deployment](https://michaelwave369.github.io/PhiGrooveDrive/e1c.html) · [Formal model and qualification](docs/LIQ_E1C.md)
+
+An independent two-body electromechanical testbench adds a **conservative repulsive potential**, an ideal linear voice-coil model with coupled back-EMF, and separate **gross bus input, ideal bus-return, copper heat, mechanical damping and stored energy** accounting. Choose Liquid, Wave, Pop, Return, Reverse, or Off voltage choreography and inspect time traces, zero-impulse center-of-mass balance, numeric energy closure, and JSON receipts. The return path is an **ideal bidirectional voltage-source assumption**, not a built or verified battery/regenerative circuit. No externally coupled thrust occurs in this isolated E1c model. The original E0 and fluid-based E1 labs stay available.
+
 ## LIQ-E1 · Six-segment fluid-resistance testbed (SIMULATED)
 
 [Launch E1 research lab after merge/deploy](https://michaelwave369.github.io/PhiGrooveDrive/e1.html) · [LIQ-E1 model, controls and falsifiers](docs/LIQ_E1.md)
