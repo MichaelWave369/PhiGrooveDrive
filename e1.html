@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080d16"><meta name="description" content="ΦGrooveDrive LIQ-E1 six-segment traveling-wave fin simulation. Reduced-order force accounting, countercontrols, matched-energy comparisons.">
+<title>ΦGrooveDrive | LIQ-E1 Fluid Coupling Lab</title>
+<link rel="stylesheet" href="./src/e1-style.css"></head><body>
+<div class="shell">
+<header class="site-header"><a class="brand" href="./index.html"><span class="brand-glyph">Φ</span><span>GROOVE<span class="light">DRIVE</span><small>LIQUID INTERFACE LAB</small></span></a><nav aria-label="Navigation"><a href="./index.html">← E0 FOUNDATION</a><a href="https://github.com/MichaelWave369/PhiGrooveDrive/blob/main/docs/LIQ_E1.md" target="_blank" rel="noreferrer">PROTOCOL ↗</a><a href="https://github.com/MichaelWave369/PhiGrooveDrive" target="_blank" rel="noreferrer">SOURCE ↗</a></nav></header>
+<main>
+<section class="hero"><div><div class="eyebrow"><span class="signal"></span> LIQ-E1 / SIX-SEGMENT RESEARCH ENGINE <span class="breaker">//</span> SIMULATED</div><h1>Give the wave<br><em>something to push.</em></h1><p>Liquid choreography meets a simplified resistive medium. Six articulating bubble nodes produce a spatial traveling wave. Explore thrust, power, and momentum transfer without pretending a neon drawing is a calibrated water tank.</p></div><div class="hero-aside"><span class="step">02 / 03</span><b>COUPLED-FIN TESTBED</b><p>Fixed fin mount · idealized fluid drag · prescribed motion · no free-swimming vehicle · no measured magnetic field</p></div></section>
+<div class="columns"><div class="left-col">
+<section class="panel" aria-label="Six-node live fin">
+<div class="panel-heading"><div class="overline">01 // KINEMATIC STAGE</div><h2>Six bubbles. One traveling wave.</h2></div><span class="tag">IDEALIZED FLUID</span></div>
+<div class="stage"><canvas id="fin" aria-label="Six articulated actuator nodes connected in a moving wave"></canvas><div class="hud hud-left"><span>FLUID ANISOTROPY</span><b id="hudAnisotropy">2.00 : 1</b></div><div class="hud hud-right"><span>DIRECTION</span><b id="direction">FORWARD FORCE</b></div><div class="hud hud-bottom">FIELD LINES ARE ARTISTIC • ARROWS INDICATE COMPUTED LOCAL LOADS • WAVE IS PRESCRIBED</div></div>
+<div class="stage-bar"><span><i class="dot cyan"></i> BUBBLE/GEAR NODES</span><span><i class="dot pink"></i> LOCAL FORCE</span><span><i class="dot gold"></i> FLUID REACTION</span><b id="clock">T + 0.00 S</b></div></section>
+<section class="metrics-row" aria-label="Average simulation results">
+<div class="metric"><span>AVERAGE STREAMWISE LOAD</span><b id="thrust">0.000 <small>N</small></b><p>Fluid force on fixed fin</p></div><div class="metric"><span>MEAN INPUT POWER</span><b id="power">0.000 <small>W</small></b><p>Assumed drag work</p></div><div class="metric"><span>FORWARD IMPULSE / ENERGY</span><b id="efficiency">0.000 <small>N·S/J</small></b><p>Signed, model-derived</p></div></section>
+<section class="panel"><div class="panel-heading"><div class="overline">02 // WAVEFORM TELEMETRY</div><h2>Thrust and power over time</h2></div></div><div class="chart-wrap"><canvas id="trace" aria-label="Computed streamwise fluid force and actuation power as a function of time"></canvas></div><div class="legend"><span><i class="dot cyan"></i> THRUST (N)</span><span><i class="dot gold"></i> POWER (W)</span></div><p class="note">Traces are a synthetic local-drag calculation. The plot rescales the two quantities separately; read numbers on the metrics and exported data, not as a common axis.</p></section>
+<section class="panel"><div class="panel-heading"><div class="overline">03 // MATCHED EFFORT LAB</div><h2>Which choreography earns its power?</h2></div><span class="tag">8 WHOLE CYCLES</span></div><div class="compare-desc">Every mode is run at the same geometry and BPM. The <strong>equal-energy</strong> column adjusts amplitude within fixed bounds to match the Wave baseline's integrated mechanical drag work. If that match is impossible, the result is withheld.</div>
+<div class="table-scroll"><table><thead><tr><th>MODE</th><th>SAME-AMPLITUDE THRUST</th><th>SAME-AMPLITUDE POWER</th><th>EQUAL-ENERGY THRUST</th><th>ENERGY MATCH</th></tr></thead><tbody id="rows"><tr><td colspan="5">Computing deterministic comparison…</td></tr></tbody></table></div><p class="note">This ranking is conditional on an uncalibrated, low-order approximation. Real fins require hydrodynamic validation, motor losses, and uncertainty measurements.</p></section>
+</div>
+<aside class="right-col">
+<section class="panel controls"><div class="panel-heading"><div class="overline">CONTROL DECK</div><h2>Conduct the Liquid.</h2></div><span class="spark">⌁</span></div><div class="control-body">
+<div class="mode-select" role="group" aria-label="Wave choreography">
+<button data-mode="liquid" aria-pressed="true" class="active">≈ <span>LIQUID</span></button>
+<button data-mode="wave" aria-pressed="false">∿ <span>WAVE</span></button>
+<button data-mode="pop" aria-pressed="false">✳ <span>POP</span></button>
+<button data-mode="standing" aria-pressed="false">⌁ <span>STANDING</span></button>
+<button data-mode="sync" aria-pressed="false">▥ <span>SYNC</span></button>
+<button data-mode="reverse" aria-pressed="false">↶ <span>REVERSE</span></button>
+</div>
+<div class="slider"><label for="bpm">RHYTHM <strong id="bpmValue">120 BPM</strong></label><input id="bpm" type="range" min="40" max="240" step="5" value="120"></div>
+<div class="slider"><label for="amplitude">AMPLITUDE <strong id="amplitudeValue">0.12 M</strong></label><input id="amplitude" type="range" min="0" max="0.3" step="0.01" value="0.12"></div>
+<div class="slider"><label for="waves">SPATIAL WAVES <strong id="wavesValue">1.00</strong></label><input id="waves" type="range" min="0.2" max="2" step="0.05" value="1"></div>
+<div class="slider"><label for="normalDrag">NORMAL DRAG <strong id="normalDragValue">2.0</strong></label><input id="normalDrag" type="range" min="0" max="4" step="0.1" value="2"></div>
+<div class="slider"><label for="tangentialDrag">TANGENTIAL DRAG <strong id="tangentialDragValue">1.0</strong></label><input id="tangentialDrag" type="range" min="0" max="4" step="0.1" value="1"></div>
+<div class="slider"><label for="fluidScale">MEDIUM COUPLING <strong id="fluidScaleValue">1.00</strong></label><input id="fluidScale" type="range" min="0" max="2" step="0.1" value="1"></div>
+<div class="control-actions"><button id="play" class="primary">Ⅱ PAUSE</button><button id="reset">↺ RESET</button></div><button id="export" class="export">↓ EXPORT RAW TRACE + RECEIPT</button></div></section>
+<section class="panel ledger"><div class="panel-heading"><div class="overline">MOMENTUM + ENERGY RECEIPT</div><h2>Physics gate</h2></div></div><div class="ledger-grid">
+<div><span>FIN IMPULSE</span><strong id="finImpulse">0.000 N·S</strong></div><div><span>FLUID REACTION</span><strong id="fluidImpulse">0.000 N·S</strong></div>
+<div><span>REACTION RESIDUAL</span><strong id="residual">0.000 N·S</strong></div><div><span>ASSUMED DRIVE WORK</span><strong id="energy">0.000 J</strong></div>
+</div><div id="status" class="status"><i class="signal"></i> COMPUTED REACTION BALANCE</div><button id="audit" class="audit">RUN ZERO-THRUST CONTROLS ↗</button><p class="note" id="auditMessage">Check no medium, no amplitude, isotropic drag, and wave-direction reversal against model expectations.</p></section>
+<section class="warning"><div class="overline">CLAIM FIREWALL / E1</div><p><strong>Not CFD. Not measured propulsion.</strong> This lab assumes local linear anisotropic drag and a fixed mount. It cannot establish real-world thrust, motor efficiency, magnetics, or regeneration. The recoil is transferred to the modeled external fluid, never created from internal motion alone.</p><a href="https://github.com/MichaelWave369/NestedBubbleGear/blob/main/docs/LIQUID_INTERFACE_BUBBLE_GEAR_ALTERMATH_V0_1.md" target="_blank" rel="noreferrer">READ NBG FORMAL THEORY ↗</a></section>
+</aside></div></main><footer><span>ΦGROOVEDRIVE / LIQ-E1</span><span>MODEL: ANISOTROPIC LINEAR RESISTANCE</span><span>ORIGIN: SIMULATED · AUTHORITY: NONE</span></footer></div>
+<script type="module" src="./src/e1-main.mjs"></script></body></html>
