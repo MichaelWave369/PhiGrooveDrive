@@ -4,8 +4,8 @@ const byId=id=>document.getElementById(id);
 const controls={...DEFAULT_E1};
 let elapsed=0,lastFrame=0,playing=true;
 let result=null,comparison=null,recomputeTimer=null;
-const canvas=byId("fin"),chart=byId("trace");
-const cc=canvas.getContext("2d"),gc=chart.getContext("2d");
+const canvas=byId("fin"),traceCanvas=byId("trace");
+const cc=canvas.getContext("2d"),gc=traceCanvas.getContext("2d");
 const bindSliders=[
   ["bpm",v=>Math.round(v)+" BPM"],
   ["amplitude",v=>v.toFixed(2)+" M"],
@@ -38,7 +38,7 @@ function refresh(){
       row.meanPower.toFixed(4)+" W</td><td class='"+(!row.matched?.achieved?"muted":"")+"'>"+
       equal+"</td><td>"+accuracy+"</td></tr>";
   }).join("");
-  drawChart();
+  drawTrace();
 }
 function scheduleRefresh(){
   clearTimeout(recomputeTimer);
@@ -172,9 +172,9 @@ function finStage(t){
     if(Math.abs(force)>1e-7) arrow(ctx,point.x,point.y+29,-sgn*Math.min(35,6+Math.abs(force)*110),0,"#edbf7e");
   });
 }
-function chart(){
+function drawTrace(){
   if(!result)return;
-  const ctx=gc,{w,h}=dimensions(ctx,chart);
+  const ctx=gc,{w,h}=dimensions(ctx,traceCanvas);
   ctx.clearRect(0,0,w,h);
   const l=36,r=w-14,top=16,bottom=h-26;
   ctx.font="10px Segoe UI";ctx.lineWidth=1;
