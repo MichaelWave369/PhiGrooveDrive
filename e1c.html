@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080d16"><meta name="description" content="ΦGrooveDrive LIQ-E1c: conservation-governed magnetic-gap and ideal regenerative voice-coil simulation.">
+<title>ΦGrooveDrive | Magnetic Liquid Interface</title>
+<link rel="stylesheet" href="./src/e1-style.css"><link rel="stylesheet" href="./src/e1c-style.css"></head><body>
+<div class="shell"><header class="site-header">
+<a class="brand" href="./index.html"><span class="brand-glyph">Φ</span><span>GROOVE<span class="light">DRIVE</span><small>MAGNETIC LIQUID INTERFACE</small></span></a>
+<nav aria-label="Research navigation"><a href="./index.html">E0 ↗</a><a href="./e1.html">E1 FIN ↗</a><a href="https://github.com/MichaelWave369/PhiGrooveDrive/blob/main/docs/LIQ_E1C.md" target="_blank" rel="noreferrer">PROTOCOL ↗</a></nav></header>
+<main>
+<section class="hero"><div><div class="eyebrow"><span class="signal"></span> LIQ-E1C / ELECTROMECHANICAL LOOP <span class="breaker">//</span> SIMULATED</div>
+<h1>Push without touch.<br><em>Account for every joule.</em></h1>
+<p>Two bubble modules repel through an idealized magnetic potential. A controlled voice coil exchanges motion and electrical energy, and a reversible bus records modeled power going out and coming back.</p></div>
+<div class="hero-aside"><span class="step">03 / 03</span><b>MAGNETIC INTERFACE LAB</b><p>Analytic force surrogate · coupled differential equations · ideal bidirectional source · no hardware recovery claimed</p></div></section>
+<div class="columns"><div class="left-col">
+<section class="panel"><div class="panel-heading"><div><div class="overline">01 // THE GAP IS A CONTROL INTERFACE</div><h2>Two bubbles. Non-contact coupling.</h2></div><span class="tag">CLOSED ENERGY LEDGER</span></div>
+<div class="stage"><canvas id="magStage" role="img" aria-label="Two bubble modules repelling and exchanging coil force across a gap"></canvas>
+<div class="hud hud-left"><span>BUBBLE A / MODULE 01</span><b>GEAR ARTICULATION</b></div>
+<div class="hud hud-right"><span>BUBBLE B / MODULE 02</span><b>EQUAL / OPPOSITE FORCE</b></div>
+<div class="stage-center"><span>MEASURED MODEL GAP</span><strong id="gap">0.190 M</strong><small id="modeNow">LIQUID CHOREOGRAPHY</small></div>
+<div class="hud hud-bottom">CURVED FIELD LINES ARE ARTISTIC • MOTION FROM COUPLED DIFFERENTIAL EQUATIONS</div></div>
+<div class="stage-bar"><span><i class="dot cyan"></i> MODULE A</span><span><i class="dot pink"></i> MODULE B</span><span><i class="dot gold"></i> FORCE / GAP FEEDBACK</span><b id="clock">T + 0.00 S</b></div></section>
+<div class="metrics-row"><div class="metric"><span>GROSS BUS ENERGY INPUT</span><b id="busIn">0.000 <small>J</small></b><p>Ideal voltage-source delivery</p></div>
+<div class="metric"><span>IDEAL BUS ENERGY RETURN</span><b id="busReturn">0.000 <small>J</small></b><p>Negative instantaneous V × I</p></div>
+<div class="metric"><span>NET BUS ENERGY</span><b id="busNet">0.000 <small>J</small></b><p>Input minus returned</p></div></div>
+<section class="panel"><div class="panel-heading"><div class="overline">02 // TIME-DOMAIN TRACE</div><h2>Gap, current and bus energy</h2></div><span class="tag">MODEL TRACE</span></div>
+<div class="chart-wrap"><canvas id="magTrace" role="img" aria-label="Simulation plot of separation, coil current, and cumulative ideal bus recovery"></canvas></div>
+<div class="legend"><span><i class="dot cyan"></i> GAP</span><span><i class="dot pink"></i> CURRENT</span><span><i class="dot gold"></i> CUMULATIVE RETURN</span></div>
+<p class="note">Each series is independently scaled for visibility. Numeric readings and JSON receipts retain SI units; visual line overlap is not equality of physical quantities.</p></section>
+<section class="panel"><div class="panel-heading"><div class="overline">03 // CONSERVATION BREAKDOWN</div><h2>Where the work actually goes</h2></div></div>
+<div class="energy-breakdown"><div><span>SPRING + MAGNET + MOTION + COIL</span><strong id="stored">0.000 J</strong></div><div><span>COPPER HEAT</span><strong id="copper">0.000 J</strong></div><div><span>MECHANICAL HEAT</span><strong id="mechanical">0.000 J</strong></div><div><span>ENERGY CLOSURE RESIDUAL</span><strong id="residual">0.000000 J</strong></div></div>
+<p class="note">Stored-energy change + thermal losses = net bus energy, within numerical integration tolerance. An ideal bus accepting return power is a model assumption, not a built regenerative circuit.</p></section>
+</div>
+<aside class="right-col">
+<section class="panel controls"><div class="panel-heading"><div class="overline">LIQUID ENERGY CONTROL DECK</div><h2>Shape the cycle.</h2></div><span class="spark">⌁</span></div>
+<div class="control-body"><div class="mode-select" role="group" aria-label="Voltage choreography">
+<button data-mode="liquid" class="active" aria-pressed="true">≈ <span>LIQUID</span></button>
+<button data-mode="wave" aria-pressed="false">∿ <span>WAVE</span></button>
+<button data-mode="pop" aria-pressed="false">✳ <span>POP</span></button>
+<button data-mode="brake" aria-pressed="false">↳ <span>RETURN</span></button>
+<button data-mode="reverse" aria-pressed="false">↶ <span>REVERSE</span></button>
+<button data-mode="off" aria-pressed="false">◌ <span>OFF</span></button></div>
+<div class="slider"><label for="bpm">BEAT RATE <strong id="bpmValue">120 BPM</strong></label><input id="bpm" type="range" min="40" max="240" step="5" value="120"></div>
+<div class="slider"><label for="voltage">DRIVE VOLTAGE <strong id="voltageValue">3.0 V</strong></label><input id="voltage" type="range" min="0" max="6" step=".2" value="3"></div>
+<div class="slider"><label for="magC">REPULSION STRENGTH <strong id="magCValue">0.32 mJ·m²</strong></label><input id="magC" type="range" min="0" max=".003" step=".00004" value=".00032"></div>
+<div class="slider"><label for="motorK">COIL FORCE CONSTANT <strong id="motorKValue">0.58 N/A</strong></label><input id="motorK" type="range" min=".1" max="2" step=".02" value=".58"></div>
+<div class="slider"><label for="resistance">COIL RESISTANCE <strong id="resistanceValue">2.60 Ω</strong></label><input id="resistance" type="range" min=".8" max="12" step=".2" value="2.6"></div>
+<div class="slider"><label for="damping">MECHANICAL DAMPING <strong id="dampingValue">0.22</strong></label><input id="damping" type="range" min="0" max="3" step=".02" value=".22"></div>
+<div class="control-actions"><button id="play" class="primary">Ⅱ PAUSE</button><button id="restart">↺ RESTART</button></div>
+<button id="download" class="export">↓ EXPORT SIMULATION + LEDGER JSON</button></div></section>
+<section class="panel ledger"><div class="panel-heading"><div class="overline">FORCE + POWER ACCOUNTABILITY</div><h2>Reality gate</h2></div></div>
+<div class="ledger-grid"><div><span>PEAK COIL CURRENT</span><strong id="peak">0.000 A</strong></div>
+<div><span>MINIMUM GAP</span><strong id="minGap">0.000 M</strong></div>
+<div><span>NET MOMENTUM</span><strong id="momentum">0.000 KG·M/S</strong></div>
+<div><span>COM DRIFT</span><strong id="com">0.000 M</strong></div></div>
+<div class="status" id="status"><i class="signal"></i> RESEARCH NUMERICAL LEDGER</div>
+<button id="audit" class="audit">RUN CONSERVATION + NULL AUDIT ↗</button><p class="note" id="auditText">Check source-off, zero magnetic potential, opposite internal forces, circuit power and energy closure.</p></section>
+<section class="warning"><div class="overline">IMPORTANT / PHYSICAL LIMITS</div>
+<p><strong>Not real electromagnet hardware.</strong> The repulsive potential is an uncalibrated surrogate. The voice-coil constant assumes ideal linear transduction, and the bus assumes it can accept negative electrical power. This does not establish real-world recovery efficiency, magnetic field geometry, thrust, or free energy.</p>
+<a href="https://github.com/MichaelWave369/NestedBubbleGear/blob/main/docs/LIQUID_INTERFACE_BUBBLE_GEAR_ALTERMATH_V0_1.md" target="_blank" rel="noreferrer">NBG / ALTERMATH FORMALISM ↗</a></section>
+</aside></div>
+</main><footer><span>ΦGROOVEDRIVE / LIQ-E1C</span><span>ELECTROMECHANICAL LAB</span><span>SIMULATED · AUTHORITY NONE</span></footer></div>
+<script type="module" src="./src/e1c-main.mjs"></script></body></html>
