@@ -8,6 +8,12 @@
 
 **[Launch browser lab (after Pages is enabled and deployed)](https://michaelwave369.github.io/PhiGrooveDrive/)**
 
+## LIQ-E1 · Six-segment fluid-resistance testbed (SIMULATED)
+
+[Launch E1 research lab after merge/deploy](https://michaelwave369.github.io/PhiGrooveDrive/e1.html) · [LIQ-E1 model, controls and falsifiers](docs/LIQ_E1.md)
+
+The E1 page extends LIQ-E0 with a **six-node traveling-wave fin held on a fixed mount**, modeled with idealized local anisotropic linear drag. The external fluid receives the opposite of the force on the fin, avoiding reactionless-propulsion claims. Compare LIQUID, WAVE, POP, STANDING, SYNC and REVERSE modes; adjust BPM, amplitude, wave count and resistance; view live phase/force visualization and derived thrust and power; run null tests; export JSON; and inspect equal-amplitude versus **equal modeled mechanical-energy** benchmarks. All results are **SIMULATED**, uncalibrated, and not CFD, water-tank measurements, real electromagnetics or electric regeneration. Existing E0 is preserved.
+
 ## What is implemented
 
 - **LIQ-E0 simulator:** 1D equal/opposite spring coupling, actively controlled rest gap, momentum-preserving relative damping, deterministic velocity-Verlet integration at 240 Hz.
