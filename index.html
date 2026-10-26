@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080c16"><meta name="description" content="ΦGrooveDrive LIQ-E0: Liquid dance-inspired coupled actuator simulation with conservation tests.">
+<title>ΦGrooveDrive | Liquid Interface Lab</title>
+<link rel="stylesheet" href="./src/style.css">
+</head><body>
+<div class="app-shell">
+<header class="site-header">
+  <a href="#home" class="brand" aria-label="PhiGrooveDrive home"><span class="brand-mark">Φ</span><span>GROOVE<span class="brand-light">DRIVE</span><small>LIQUID INTERFACE LAB</small></span></a>
+  <nav aria-label="Resources"><a href="https://github.com/MichaelWave369/NestedBubbleGear/blob/main/docs/LIQUID_INTERFACE_BUBBLE_GEAR_ALTERMATH_V0_1.md" target="_blank" rel="noreferrer">NBG FORMALISM ↗</a><a href="https://github.com/MichaelWave369/PhiGrooveDrive" target="_blank" rel="noreferrer">SOURCE ↗</a></nav>
+</header>
+<main id="home">
+  <section class="intro">
+    <div><div class="eyebrow"><span class="status-light"></span> EXPERIMENT LIQ-E0 <span class="intro-divider">/</span> SIMULATION ONLY</div>
+      <h1>The <em>space</em><br>between motion.</h1>
+      <p>Hands become bubbles. Fingers become gears. Liquid dance becomes a measurable sequence of <strong>gap, phase, pulse and response.</strong></p>
+    </div>
+    <div class="intro-aside"><span>01 / 03</span><span>ISOLATED-PAIR TESTBENCH</span><p>Momentum stays conserved. Energy is accounted for. The choreography changes internal motion, not the center of mass.</p></div>
+  </section>
+  <div class="layout">
+    <div class="primary-col">
+      <section class="panel simulator" aria-label="Two-module simulation">
+        <div class="panel-heading"><div><span class="overline">01 // DYNAMIC FIELD VIEW</span><h2>Liquid interface</h2></div><span class="research-tag">SYNTHETIC MODEL</span></div>
+        <div class="stage-wrap"><canvas id="stage" aria-label="Animated diagram of two coupled modules with a changing gap" role="img"></canvas>
+          <div class="stage-overlay stage-left"><span>BUBBLE A</span><strong>MODULE 01</strong></div><div class="stage-overlay stage-right"><span>BUBBLE B</span><strong>MODULE 02</strong></div>
+          <div class="stage-center"><span>RELATIONAL INTERFACE</span><strong id="gapLarge">0.800 <small>m</small></strong></div>
+          <span class="stage-bottom">GEAR ARTICULATION <b>→</b> GAP DYNAMICS <b>→</b> PHASE FLOW</span>
+        </div>
+        <div class="stage-footer"><span><i class="dot cyan"></i> MODULE A</span><span><i class="dot purple"></i> MODULE B</span><span><i class="dot gold"></i> VIRTUAL EQUILIBRIUM</span><span class="time" id="time">T + 0.00 S</span></div>
+      </section>
+      <section class="panel chart-panel">
+        <div class="panel-heading"><div><span class="overline">02 // LIVE TELEMETRY</span><h2>Gap and target geometry</h2></div><span class="chart-legend"><i class="dot cyan"></i> ACTUAL <i class="dot gold"></i> TARGET</span></div>
+        <div class="plot"><canvas id="chart" aria-label="Live trace of physical gap compared with actuator target"></canvas></div>
+        <p class="fine-print">Gap measured between idealized spherical module surfaces. The target is an actively commanded spring equilibrium, not a detected magnetic field.</p>
+      </section>
+      <section class="panel keyhole">
+        <div class="panel-heading"><div><span class="overline">03 // NBG KEYHOLE DEMONSTRATION</span><h2>Same coarse view. Different future.</h2></div><span class="research-tag">CONTROLLED PAIR</span></div>
+        <p>Both initial states have zero aggregate internal force, identical center of mass, the same gap, and the same stored energy. The coarse observer hides the <strong>sign of the internal preload</strong>.</p>
+        <div class="pair-results"><div><span>PRELOAD A / AFTER 150 MS</span><strong id="futureA">--</strong></div><div><span>PRELOAD B / AFTER 150 MS</span><strong id="futureB">--</strong></div><div><span>FUTURE GAP DIFFERENCE</span><strong id="futureDiff">--</strong></div></div>
+        <p class="fine-print">This demonstrates an ordinary observability distinction, not an exotic force. A richer signed-force sensor resolves the ambiguity.</p>
+      </section>
+    </div>
+    <aside class="secondary-col">
+      <section class="panel controls"><div class="panel-heading"><div><span class="overline">CONTROL ENGINE</span><h2>Choreography</h2></div><span class="mini-symbol">⌁</span></div>
+        <div class="mode-grid" role="group" aria-label="Dance control pattern">
+          <button data-mode="liquid" class="mode active" aria-pressed="true"><b>≈</b> LIQUID</button>
+          <button data-mode="wave" class="mode" aria-pressed="false"><b>∿</b> WAVE</button>
+          <button data-mode="pop" class="mode" aria-pressed="false"><b>✳</b> POP</button>
+          <button data-mode="lock" class="mode" aria-pressed="false"><b>▣</b> LOCK</button>
+        </div>
+        <div class="slider-block"><label for="bpm">PULSE RATE <strong id="bpmValue">140 BPM</strong></label><input id="bpm" type="range" min="40" max="240" step="1" value="140"></div>
+        <div class="slider-block"><label for="amplitude">GAP MODULATION <strong id="amplitudeValue">0.16 M</strong></label><input id="amplitude" type="range" min="0" max="0.28" step="0.01" value="0.16"></div>
+        <div class="slider-block"><label for="springK">COUPLING STIFFNESS <strong id="springKValue">14 N/M</strong></label><input id="springK" type="range" min="2" max="60" step="1" value="14"></div>
+        <div class="slider-block"><label for="damping">RELATIVE DAMPING <strong id="dampingValue">0.18</strong></label><input id="damping" type="range" min="0" max="3" step="0.02" value="0.18"></div>
+        <div class="button-row"><button class="primary-button" id="play">Ⅱ PAUSE</button><button class="secondary-button" id="reset">↺ RESET</button></div>
+        <button class="download-button" id="export">↓ EXPORT TRACE + RECEIPT (JSON)</button>
+      </section>
+      <section class="panel telemetry"><div class="panel-heading"><div><span class="overline">ENERGY + CONSERVATION LEDGER</span><h2>Reality check</h2></div></div>
+        <div class="metrics"><div><span>NET MOMENTUM ERROR</span><strong id="momentum">0.00</strong><small>KG·M/S</small></div><div><span>COM DRIFT</span><strong id="comDrift">0.00</strong><small>METERS</small></div><div><span>ENERGY RESIDUAL</span><strong id="residual">0.00</strong><small>JOULES</small></div><div><span>DRIVE WORK (SIGNED)</span><strong id="work">0.00</strong><small>JOULES</small></div><div><span>STORED ENERGY</span><strong id="stored">0.00</strong><small>JOULES</small></div><div><span>DISSIPATED HEAT</span><strong id="loss">0.00</strong><small>JOULES</small></div></div>
+        <div class="ledger-status"><span class="status-light"></span><span id="ledgerStatus">CONSERVATION CHECK READY</span></div>
+        <button class="audit-button" id="audit">RUN DETERMINISTIC AUDIT ↗</button>
+        <p class="fine-print" id="auditResult">No thrust is generated by this isolated two-module model. Positive external work is needed to drive its moving equilibrium.</p>
+      </section>
+      <section class="disclaimer"><span class="overline">CLAIM BOUNDARY / V0.1</span><p><strong>This is a computational model.</strong> Field arcs and finger gears are visual metaphors. No spacecraft propulsion, magnetic anomalous force, energy gain, or bench experiment is claimed.</p><a href="https://github.com/MichaelWave369/NestedBubbleGear" target="_blank" rel="noreferrer">EXPLORE NBG RESEARCH ↗</a></section>
+    </aside>
+  </div>
+  <footer><span>ΦGROOVEDRIVE / LIQ-E0</span><span>ORIGIN: SIMULATED · AUTHORITY: NONE</span><span>LEDGER ABOVE EGO.</span></footer>
+</main></div>
+<script type="module" src="./src/main.mjs"></script>
+</body></html>
