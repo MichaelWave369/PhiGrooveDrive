@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Liquid Interface Labs LIQ-E0, LIQ-E1, LIQ-E1c and LIQ-H1",
+  "description": "Liquid Interface Labs LIQ-E0, LIQ-E1, LIQ-E1c, LIQ-H1 and LIQ-H2",
   "scripts": {
     "test": "node --test",
-    "validate": "node --check src/physics.mjs && node --check src/main.mjs && node --check src/e1-physics.mjs && node --check src/e1-main.mjs && node --check src/e1c-physics.mjs && node --check src/e1c-main.mjs && node --check src/helix-physics.mjs && node --check src/helix-main.mjs && node --test",
+    "validate": "node --check src/physics.mjs && node --check src/main.mjs && node --check src/e1-physics.mjs && node --check src/e1-main.mjs && node --check src/e1c-physics.mjs && node --check src/e1c-main.mjs && node --check src/helix-physics.mjs && node --check src/helix-main.mjs && node --check src/helix-compare.mjs && node --check src/helix-compare-main.mjs && node --test",
     "test:e1": "node --test tests/e1-physics.test.mjs",
     "test:e1c": "node --test tests/e1c-physics.test.mjs",
-    "test:helix": "node --test tests/helix-physics.test.mjs"
+    "test:helix": "node --test tests/helix-physics.test.mjs",
+    "test:helix-h2": "node --test tests/helix-compare.test.mjs"
   }
 }
