@@ -8,6 +8,12 @@
 
 **[Launch browser lab (after Pages is enabled and deployed)](https://michaelwave369.github.io/PhiGrooveDrive/)**
 
+## LIQ-H2 · Matched Positive-Work Relational Benchmark (SIMULATED)
+
+[Launch the H2 benchmark after merge and Pages deployment](https://michaelwave369.github.io/PhiGrooveDrive/helix-compare.html) · [Formal protocol](docs/LIQ_H2.md)
+
+Compare the full nested mirror helix with inter-strand **rung ablation**, **inner/outer nesting ablation**, and **opposing choreography**. Each accepted alternative matches the same **integrated positive actuator mechanical work** (per-port, dimensionless) to within a declared tolerance. Bounded drive search can return honest NO MATCH. Inspect mirror fidelity, nested alignment, signed/negative work, modeled heat and the energy residual; export a full JSON simulation receipt. This does NOT demonstrate gravity, electromagnetic forces, cosmological anti-universes, electrical recovery or propulsion. Existing laboratories remain untouched.
+
 ## LIQ-H1 · Nested Mirror Helix (SIMULATED / DIMENSIONLESS)
 
 [Open the new Mirror Helix lab after merge and Pages deployment](https://michaelwave369.github.io/PhiGrooveDrive/helix.html) · [LIQ-H1 formal protocol](docs/LIQ_H1.md)
