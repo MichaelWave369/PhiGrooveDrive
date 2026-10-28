@@ -8,6 +8,12 @@
 
 **[Launch browser lab (after Pages is enabled and deployed)](https://michaelwave369.github.io/PhiGrooveDrive/)**
 
+## LIQ-H1 · Nested Mirror Helix (SIMULATED / DIMENSIONLESS)
+
+[Open the new Mirror Helix lab after merge and Pages deployment](https://michaelwave369.github.io/PhiGrooveDrive/helix.html) · [LIQ-H1 formal protocol](docs/LIQ_H1.md)
+
+A self-contained, coupled-strand phase simulator with **12 paired rungs and two nested levels per node**. Explore neighbor/rung/inner couplings, one-sided vs balanced drives, mirror fidelity, energy and conserved phase-charge checks. An NBG Keyhole illustrates how opposite hidden B-phase signs produce different observed A-phase futures under identical dynamics. Export JSON receipts. This is a computational analogy **not** a gravity, magnetism, biological DNA, universe/anti-universe or propulsion model. Existing E0/E1/E1c labs remain unchanged.
+
 ## LIQ-E1c · Magnetic gap / reversible-bus laboratory (SIMULATED)
 
 [Open the Magnetic Loop lab after merge and Pages deployment](https://michaelwave369.github.io/PhiGrooveDrive/e1c.html) · [Formal model and qualification](docs/LIQ_E1C.md)
