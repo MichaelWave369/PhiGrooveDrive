@@ -105,8 +105,11 @@ async function refine(){
    $("meshRows").append(tr);
   }
   $("meshSummary").textContent="49→65 force-vector change: "+
-    fmt(meshStudy.changeFineVsMid_N_per_m*1e6,4)+" µN/m. The mismatch is evidence of mesh sensitivity, not a new physical force.";
-  $("status").textContent="SIMULATED · completed independent 3-grid refinement. Results are not calibration.";
+    fmt(meshStudy.changeFineVsMid_N_per_m*1e6,4)+" µN/m ("+
+    fmt(100*meshStudy.relativeChangeFineVsMid,1)+"% relative). "+
+    meshStudy.stabilityScreen+". Mesh and staircase geometry error remain; no propulsion inference.";
+  $("status").textContent="SIMULATED · "+meshStudy.stabilityScreen+
+   " · three-grid results are not calibrated measurements.";
  }catch(error){$("status").textContent="Mesh study error: "+String(error.message||error);}
  finally{for(const k of ["solve","refine","export"])$(k).disabled=false;}
 }
