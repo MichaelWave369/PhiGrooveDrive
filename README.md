@@ -8,6 +8,12 @@
 
 **[Launch browser lab (after Pages is enabled and deployed)](https://michaelwave369.github.io/PhiGrooveDrive/)**
 
+## LIQ-ES2 · Finite-element electric fields & Maxwell stress (SIMULATED)
+
+[Open the LIQ-ES2 FEM laboratory after merge and deployment](https://michaelwave369.github.io/PhiGrooveDrive/electrostatics-fem.html) · [Formal equation, geometry and falsification protocol](docs/LIQ_ES2.md)
+
+Moving beyond LIQ-ES1 point charges, ES2 assembles a **2D linear-triangle Galerkin finite-element** electrostatic model with two fixed-potential rectangular conductors and an explicit grounded external enclosure. The browser renders the computed potential, shows independent closed-contour Maxwell-stress force estimates around A, B, the pair, and the enclosure, and performs a 33/49/65-grid refinement comparison. Forces are **N per meter of modeled depth**, not total 3D thrust. Numerical residuals and convergence remain visible; the enclosure is an **external momentum interaction**. No Exodus hardware, new force or propulsion effect is reproduced or claimed.
+
 ## LIQ-ES1 · Electrostatic geometry & momentum audit (SIMULATED)
 
 [Open the ES1 browser laboratory after PR merge/deployment](https://michaelwave369.github.io/PhiGrooveDrive/electrostatics.html) · [Full evidence review, model, limitations and preregistered controls](docs/LIQ_ES1.md)
@@ -74,7 +80,7 @@ Passing numerical tests supports only the behavior of the implementation under i
 
 | Stage | Status | Scope |
 | --- | --- | --- |
-| LIQ-ES1 | Implemented in software | Fixed-point-charge system-boundary audit, external coupling, falsifiers |\n| LIQ-E0 | Implemented in software | Coupled masses, conservation, Keyhole, gap control |
+| LIQ-ES2 | Implemented in software | 2D P1 FEM potential, Maxwell-stress closed contours, grounded enclosure, 3-grid refinement |\n| LIQ-ES1 | Implemented in software | Fixed-point-charge system-boundary audit, external coupling, falsifiers |\n| LIQ-E0 | Implemented in software | Coupled masses, conservation, Keyhole, gap control |
 | LIQ-E1 | Proposed | Fluid-coupled six-segment fin, controller comparisons |
 | LIQ-E2 | Proposed | Calibrated low-energy electromagnetic/regenerative bench |
 | PhiBox bridge | Future | Optional bounded BPM/event source |
