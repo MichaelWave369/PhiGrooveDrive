@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080c16">
+<meta name="description" content="LIQ-ES1: a transparent Coulomb force and external momentum accounting simulation. Not empirical propulsion evidence.">
+<title>ΦGrooveDrive | LIQ-ES1 Electrostatic Audit</title>
+<style>
+:root{color-scheme:dark;font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;color:#eaf3ff;background:#080c16}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 70% 0%,#142a40,#080c16 55%);min-height:100vh}
+a{color:#87e8eb}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #7ce6e9;outline-offset:3px}
+.shell{max-width:1180px;margin:auto;padding:26px 22px 52px}
+.top{display:flex;justify-content:space-between;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:44px}
+.brand{font-size:19px;font-weight:900;letter-spacing:.035em;color:#effdff;text-decoration:none}.brand i{font-style:normal;color:#78e2ea;font-size:29px}.links{display:flex;gap:18px;font-size:11px;font-weight:800;letter-spacing:.08em}
+.eyebrow{font-size:10px;letter-spacing:.18em;color:#86d9dd;font-weight:900}.hero h1{font-weight:750;font-size:clamp(35px,6vw,65px);letter-spacing:-.055em;line-height:1.09;margin:14px 0}.hero h1 em{color:#87e8eb;font-style:normal}
+.hero p{max-width:780px;font-size:15px;line-height:1.8;color:#abc2d4}.warning{margin:26px 0;border:1px solid #796344;border-radius:12px;background:#362b1a;color:#f8ddb2;padding:14px 17px;font-size:12px;line-height:1.7}
+.grid{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(280px,1fr);gap:18px}.stack{display:grid;gap:18px;align-content:start}
+.panel{border:1px solid #2b3e55;border-radius:17px;background:#101b2b;padding:23px;min-width:0;box-shadow:0 10px 30px #0004}
+.panel h2{font-size:21px;margin:8px 0 16px;letter-spacing:-.025em}.panel p{color:#a6b9d1;font-size:12px;line-height:1.7}
+.field{margin:17px 0}.field label{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:11px;font-weight:800;color:#adc2d6;letter-spacing:.04em}.field label output{color:#9af3f2}.field input{width:100%;margin-top:12px;accent-color:#83edf1}.field select{width:100%;margin-top:9px;color:#eaf6fe;background:#1c3246;border:1px solid #416076;border-radius:8px;padding:11px}
+svg{width:100%;height:auto;max-height:240px;background:radial-gradient(ellipse at center,#1c2c4b,#0b1425);border:1px solid #263c57;border-radius:13px}
+.legend{display:flex;flex-wrap:wrap;gap:15px;font-size:10px;color:#a7bcd2;padding:8px 2px}.legend b{font-size:15px}.legend .a{color:#71e1ee}.legend .b{color:#e3acff}.legend .c{color:#f1d389}
+.rowmetric{display:grid;grid-template-columns:1fr auto;gap:8px;border-bottom:1px solid #2a3c52;padding:14px 0;color:#9eb8c9;font-size:12px}.rowmetric strong{color:#f1f8ff;font-size:16px;font-variant-numeric:tabular-nums}
+.rowmetric strong.good{color:#8ee6d0}.rowmetric strong.warn{color:#f7d69e}
+.forcerow{display:grid;grid-template-columns:85px 1fr 90px;align-items:center;gap:8px;margin:14px 0;font-size:12px;color:#c5d5e9}.track{height:21px;position:relative;border-radius:7px;background:#17293b;border:1px solid #32445b;overflow:hidden}.zero{position:absolute;left:50%;height:100%;width:1px;background:#b1c5d7;opacity:.8}.bar{position:absolute;top:3px;bottom:3px;border-radius:3px;min-width:1px;background:linear-gradient(90deg,#4fabb9,#96f1eb)}.bar.external{background:linear-gradient(90deg,#c48fe6,#f1ca82)}.bar.total{background:#c8e8ee}
+.forcegroups{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin-bottom:18px}.forcegroups button{cursor:pointer;padding:10px 5px;border-radius:7px;background:#173347;border:1px solid #37596f;color:#a8c6d8;font-size:10px;font-weight:800}.forcegroups button.active{background:#2b5970;color:white;border-color:#7ddce5}
+button.primary{cursor:pointer;padding:13px 14px;background:#8de5e8;color:#06242e;border:0;border-radius:8px;font-weight:850;font-size:12px;margin:8px 8px 0 0}button.secondary{cursor:pointer;padding:13px 14px;background:#1b3448;border:1px solid #537689;color:#cfedf1;border-radius:8px;font-weight:800;font-size:12px}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;font-size:11px}th,td{text-align:right;padding:9px 6px;border-bottom:1px solid #314359}th:first-child,td:first-child{text-align:left}th{color:#9ec8d8}td{color:#d4e4eb}.note{font-size:11px!important;color:#85a1ba!important}.audit{color:#9de4cc;font-weight:750}.source{line-height:1.9;font-size:12px}footer{display:flex;justify-content:space-between;gap:20px;margin-top:30px;font-size:10px;letter-spacing:.12em;color:#7890a5}
+@media(max-width:850px){.grid{grid-template-columns:1fr}}@media(max-width:540px){.shell{padding:19px 13px}.panel{padding:16px}.forcerow{grid-template-columns:55px 1fr 77px}.links{gap:10px}.top{margin-bottom:24px}footer{flex-direction:column}}
+</style>
+</head>
+<body><main class="shell">
+<header class="top"><a class="brand" href="./"><i>Φ</i> GROOVE DRIVE</a><nav class="links"><a href="./">E0 HOME</a><a href="./e1c.html">E1C MAGNETICS</a><a href="./helix-compare.html">H2 BENCH</a><a href="./docs/LIQ_ES1.md">ES1 PROTOCOL</a></nav></header>
+<section class="hero"><div class="eyebrow">LIQ-ES1 / ELECTROSTATIC MOMENTUM AUDIT / SOFTWARE ONLY</div>
+<h1>Asymmetric fields.<br><em>Account for every reaction.</em></h1>
+<p>Explore Coulomb interactions in a deliberately simple three-charge model. Change the geometry. Observe individual forces. Then enable a separate external charged object and see why a force on the device is not automatically reactionless propulsion.</p></section>
+<div class="warning"><strong>CLAIM BOUNDARY:</strong> SIMULATED fixed point charges, not Exodus T-Blade hardware or a finite-conductor field solver. No voltage-controlled electrode model, chamber calibration, new force, antigravity, measured thrust or spacecraft propulsion is claimed.</div>
+<div class="grid">
+<div class="stack">
+<section class="panel"><div class="eyebrow">01 / SYSTEM BOUNDARY VIEW</div><h2>Electrodes and external environment</h2>
+<svg id="diagram" viewBox="0 0 760 230" role="img" aria-label="Schematic of three signed charges and optional external fixed charge, not a field solver"></svg>
+<div class="legend"><span><b class="a">●</b> A positive</span><span><b class="b">●</b> B negative</span><span><b class="c">●</b> C positive</span><span>○ External charged object, when enabled</span></div>
+<p class="note">Positions and point-charge strengths are assumed inputs. Lines are schematic. The external object lies OUTSIDE the device boundary.</p></section>
+<section class="panel"><div class="eyebrow">02 / FORCE LEDGER</div><h2>Individual forces are not net thrust</h2>
+<div class="forcegroups"><button data-kind="internal" class="active" type="button">INTERNAL</button><button data-kind="external" type="button">EXTERNAL</button><button data-kind="total" type="button">TOTAL ON CHARGE</button></div>
+<div id="forceRows" aria-label="Signed force bars for electrodes A, B and C"></div>
+<p class="note">Bar center = zero. Leftward bars are negative; rightward are positive. Values in millinewtons (mN). Zoom is automatically rescaled for each view.</p></section>
+<section class="panel"><div class="eyebrow">03 / ASYMMETRY SWEEP</div><h2>Change the shape, not the conservation law</h2>
+<table><thead><tr><th>C geometry ratio</th><th>Internal net (mN)</th><th>Device total (mN)</th><th>Wall reaction (mN)</th></tr></thead><tbody id="sweep"></tbody></table><p class="note">Signed values are synthetic computed outputs. The wall is an external momentum sink/source when enabled, not evidence of a new force.</p></section>
+</div>
+<div class="stack">
+<section class="panel"><div class="eyebrow">RESEARCH CONTROLS</div><h2>Specify the system</h2>
+<div class="field"><label for="mode">SYSTEM BOUNDARY</label><select id="mode"><option value="isolated">Isolated: internal charges only</option><option value="wall">Coupled: include external charged object</option></select></div>
+<div class="field"><label for="asymmetry">C OFFSET RATIO <output id="asymmetryValue"></output></label><input id="asymmetry" type="range" min="0.5" max="2" step="0.05" value="1.3"></div>
+<div class="field"><label for="spacingCm">BASE SEPARATION <output id="spacingCmValue"></output></label><input id="spacingCm" type="range" min="2" max="20" step="0.5" value="5"></div>
+<div class="field"><label for="chargeNC">CHARGE SCALE <output id="chargeNCValue"></output></label><input id="chargeNC" type="range" min="1" max="100" step="1" value="20"></div>
+<div class="field"><label for="wallChargeNC">OUTSIDE CHARGE <output id="wallChargeNCValue"></output></label><input id="wallChargeNC" type="range" min="0" max="100" step="1" value="25"></div>
+<div class="field"><label for="wallGapCm">EXTERNAL GAP <output id="wallGapCmValue"></output></label><input id="wallGapCm" type="range" min="3" max="30" step="1" value="8"></div>
+<div class="field"><label><span>MIRROR THE DEVICE GEOMETRY</span><input id="mirror" type="checkbox"></label></div>
+<button class="primary" id="qualify" type="button">RUN NUMERICAL AUDIT</button><button class="secondary" id="export" type="button">EXPORT JSON RECEIPT</button>
+<p class="audit" id="auditResult" aria-live="polite">Ready for deterministic conservation checks.</p></section>
+<section class="panel"><div class="eyebrow">WHOLE-SYSTEM ACCOUNTING</div><h2>Momentum ledger</h2>
+<div class="rowmetric"><span>Internal electrode net</span><strong class="good" id="internalNet"></strong></div>
+<div class="rowmetric"><span>Force on device from outside</span><strong id="deviceExternal"></strong></div>
+<div class="rowmetric"><span>Total on device</span><strong id="deviceTotal"></strong></div>
+<div class="rowmetric"><span>Reaction on external object</span><strong id="reactionOnWall"></strong></div>
+<div class="rowmetric"><span>Expanded-system residual</span><strong class="good" id="combinedResidual"></strong></div>
+<p class="note" id="interpretation"></p></section>
+<section class="panel source"><div class="eyebrow">PRIMARY SOURCES / CONTEXT</div><h2>Investigate, don't assume</h2>
+<a href="https://patents.google.com/patent/US11511891B2/en" target="_blank" rel="noreferrer">Buhler & Aurigema patent</a><br>
+<a href="https://ept.space/about/" target="_blank" rel="noreferrer">Exodus' own test claims</a><br>
+<a href="https://doi.org/10.1038/s41598-024-70286-w" target="_blank" rel="noreferrer">Independent EM/gravity controls (different device)</a><br>
+<a href="./docs/LIQ_ES1.md">Our controls, falsifiers and limitations</a>
+<p class="note">Company claims are not independent validation. A passing numerical conservation test proves model consistency only.</p></section>
+</div>
+</div>
+<footer><span>ΦGROOVEDRIVE / LIQ-ES1</span><span>ORIGIN: SIMULATED · AUTHORITY: NONE</span><span>LEDGER ABOVE EGO.</span></footer>
+</main><script type="module" src="./src/es1-main.mjs"></script></body></html>
