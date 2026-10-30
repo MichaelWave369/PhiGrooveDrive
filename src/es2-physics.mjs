@@ -216,6 +216,14 @@ export function refinement(input={}){
     energy_J_per_m:r.storedEnergy_J_per_m};
  });
  const mid=checks[1],fine=checks[2];
- return {checks,changeFineVsMid_N_per_m:Math.hypot(fine.fx_N_per_m-mid.fx_N_per_m,fine.fy_N_per_m-mid.fy_N_per_m),
-   evidence:"mesh-refinement comparison only; no automatic accuracy/physical validation claim"};
+ const difference=Math.hypot(fine.fx_N_per_m-mid.fx_N_per_m,fine.fy_N_per_m-mid.fy_N_per_m);
+ const reference=Math.max(Math.hypot(mid.fx_N_per_m,mid.fy_N_per_m),
+                          Math.hypot(fine.fx_N_per_m,fine.fy_N_per_m),1e-12);
+ const relativeChange=difference/reference;
+ // A negative gate means NOT NUMERICALLY RESOLVED, not novel physics.
+ // Even a 10% screen pass would NOT validate accuracy against reality.
+ const stableScreen=checks.every(x=>x.converged)&&relativeChange<=0.10;
+ return {checks,changeFineVsMid_N_per_m:difference,relativeChangeFineVsMid:relativeChange,
+   stabilityScreen:stableScreen?"WITHIN_10_PERCENT_SCREEN_ONLY":"MESH_SENSITIVITY_UNRESOLVED",
+   evidence:"screening result only; coarse staircase electrode representation and contour discretization can cause strong grid dependence. No physical validation claim"};
 }
