@@ -8,6 +8,12 @@
 
 **[Launch browser lab (after Pages is enabled and deployed)](https://michaelwave369.github.io/PhiGrooveDrive/)**
 
+## LIQ-ES1 · Electrostatic geometry & momentum audit (SIMULATED)
+
+[Open the ES1 browser laboratory after PR merge/deployment](https://michaelwave369.github.io/PhiGrooveDrive/electrostatics.html) · [Full evidence review, model, limitations and preregistered controls](docs/LIQ_ES1.md)
+
+A deterministic three-charge Coulomb model makes the **system boundary** visible: asymmetric internal forces on individual charges sum to zero for the isolated assembly. Turning on an explicit charged external object can make the device subsystem experience a force, while an equal and opposite force appears on that external object. Inspect signed forces, mirrored geometries, a nine-point shape sweep, 16-case numerical audit and export JSON receipts. **This is not a simulation or replication of Exodus hardware**, and no physical thrust, new force or gravity coupling is claimed.
+
 ## LIQ-H2 · Matched Positive-Work Relational Benchmark (SIMULATED)
 
 [Launch the H2 benchmark after merge and Pages deployment](https://michaelwave369.github.io/PhiGrooveDrive/helix-compare.html) · [Formal protocol](docs/LIQ_H2.md)
@@ -68,7 +74,7 @@ Passing numerical tests supports only the behavior of the implementation under i
 
 | Stage | Status | Scope |
 | --- | --- | --- |
-| LIQ-E0 | Implemented in software | Coupled masses, conservation, Keyhole, gap control |
+| LIQ-ES1 | Implemented in software | Fixed-point-charge system-boundary audit, external coupling, falsifiers |\n| LIQ-E0 | Implemented in software | Coupled masses, conservation, Keyhole, gap control |
 | LIQ-E1 | Proposed | Fluid-coupled six-segment fin, controller comparisons |
 | LIQ-E2 | Proposed | Calibrated low-energy electromagnetic/regenerative bench |
 | PhiBox bridge | Future | Optional bounded BPM/event source |
