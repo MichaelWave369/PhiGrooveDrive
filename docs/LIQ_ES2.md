@@ -109,7 +109,7 @@ A pass in these tests verifies the **implementation under the declared equations
 
 ## Convergence and decision discipline
 
-Run the 33 / 49 / 65 mesh study with unchanged physical dimensions. Record the pair force vector (Fx,Fy), group-vs-outer residual magnitude and electrostatic stored energy. Differences between coarse and fine meshes are **not automatically a converged answer**. Compare against an independent FEM or finite-difference solver in a future rung.
+Run the 33 / 49 / 65 mesh study with unchanged physical dimensions. Record the pair force vector (Fx,Fy), group-vs-outer residual magnitude and electrostatic stored energy. Differences between coarse and fine meshes are **not automatically a converged answer**. The implementation also reports a 10% screening flag; passing that screen would not prove accuracy. The rectangular conductors are represented by fixed Dirichlet grid nodes, yielding **staircase geometry that changes with the mesh**. These mesh-dependent geometry and contour effects can dominate any apparent force difference. A failed screen is recorded as `MESH_SENSITIVITY_UNRESOLVED`, never treated as a new-force observation. Compare against an independent FEM or finite-difference solver in a future rung.
 
 Pre-register any later hardware measurement: closed momentum boundary, raw signed traces, instrument calibration, fixed geometry and environment, forward/reverse orientation, electrode OFF and dummy loads, zero-voltage null, shielding, chamber-distance sweep, pressure and thermal controls, blind analysis, independent reproduction. A high-voltage device is **not** justified by a green GitHub action.
 
