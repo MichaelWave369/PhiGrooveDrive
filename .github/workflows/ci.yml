@@ -1,4 +1,4 @@
-name: LIQ-E0 numerical qualification
+name: ΦGrooveDrive numerical qualification
 on:
   push:
     branches: [main]
@@ -14,5 +14,5 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Syntax, momentum, energy, and Keyhole tests
+      - name: Syntax, conservation, electrostatic boundary and Keyhole tests
         run: npm run validate
