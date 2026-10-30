@@ -105,7 +105,9 @@ test("mesh refinement compares independent grids, no forced numerical closure",(
  assert.ok(r.checks.every(x=>x.converged && x.iterations>0));
  assert.ok(r.checks.every(x=>Number.isFinite(x.fx_N_per_m) && x.energy_J_per_m>0));
  assert.ok(Number.isFinite(r.changeFineVsMid_N_per_m));
- assert.match(r.evidence,/no automatic/);
+ assert.ok(["MESH_SENSITIVITY_UNRESOLVED","WITHIN_10_PERCENT_SCREEN_ONLY"].includes(r.stabilityScreen));
+ assert.ok(Number.isFinite(r.relativeChangeFineVsMid) && r.relativeChangeFineVsMid>=0);
+ assert.match(r.evidence,/No physical validation/);
 });
 test("bounded configuration, evidence limits and original ES1 are preserved",()=>{
  const cfg=configure({grid:500,voltage:500000,offsetMm:-100,mirror:"yes"});
