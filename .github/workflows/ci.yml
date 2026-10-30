@@ -1,4 +1,4 @@
-name: ΦGrooveDrive numerical qualification
+name: ΦGrooveDrive FEM and numerical qualification
 on:
   push:
     branches: [main]
@@ -14,5 +14,5 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Syntax, conservation, electrostatic boundary and Keyhole tests
+      - name: FEM, Maxwell stress, conservation and Keyhole tests
         run: npm run validate
